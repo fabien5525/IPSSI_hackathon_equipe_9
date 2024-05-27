@@ -6,3 +6,4 @@
 * Jemimadoria KOUMBA
 * Omar MUFTI
 * Loris HASLAY
+* Chaymae Houbbadi
