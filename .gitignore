@@ -1,2 +1,4 @@
 /.venv/
 .idea
+*.xlsx
+notebooks/Hackathon.ipynb
