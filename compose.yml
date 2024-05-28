@@ -28,7 +28,7 @@ services:
       - ./hackathon_front:/app
       - /app/node_modules
     ports:
-      - "80:3000"
+      - "3000:3000"
 
   # back python 3.9, with flash (python app.py) 
   back:
@@ -37,8 +37,8 @@ services:
     volumes:
       - ./back:/app
       - /app/__pycache__
-    ports:
-      - "5000:5000"
+    # ports:
+    #   - "5000:5000"
 
 
 volumes:
