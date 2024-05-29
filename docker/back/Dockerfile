@@ -6,6 +6,6 @@ RUN chmod +x /entrypoint.sh
 
 WORKDIR /app
 
-entrypoint ["/bin/bash", "/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 
 EXPOSE 5000
