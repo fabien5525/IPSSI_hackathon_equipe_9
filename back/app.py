@@ -17,7 +17,7 @@ print("App Flask créée...")
 def home():
     return "Bienvenue à mon API Flask!"
 
-# Route pour lire tous les enregistrements de la table Country
+# lire la table Country
 @app.route('/countries', methods=['GET'])
 def get_countries():
     try:
@@ -37,7 +37,7 @@ def get_countries():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# Route pour lire tous les enregistrements de la table Athlete
+# lire  la table Athlete
 @app.route('/athletes', methods=['GET'])
 def get_athletes():
     try:
@@ -58,7 +58,7 @@ def get_athletes():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# Route pour lire tous les enregistrements de la table Game
+#lire la table Game
 @app.route('/games', methods=['GET'])
 def get_games():
     try:
@@ -79,7 +79,7 @@ def get_games():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# Route pour lire tous les enregistrements de la table Participation
+# lire la table Participation
 @app.route('/participations', methods=['GET'])
 def get_participations():
     try:
