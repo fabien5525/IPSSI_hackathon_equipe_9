@@ -9,7 +9,9 @@ import {
   Paper,
   TablePagination,
 } from '@mui/material';
-import data from '../data.json'; // Assurez-vous que le chemin est correct
+import axios from 'axios';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Countries() {
   const [countries, setCountries] = useState([]);
@@ -17,7 +19,13 @@ function Countries() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setCountries(data.countries);
+    axios.get(`${API_URL}/countries`)
+      .then((response) => {
+        setCountries(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching countries:', error);
+      });
   }, []);
 
   const handleChangePage = (event, newPage) => {
@@ -32,8 +40,8 @@ function Countries() {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}>Pays</h2>
-      <div className="table-container">
-        <div className="table-wrapper">
+      <div className="table-container" style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+        <div className="table-wrapper" style={{ width: '80%' }}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="countries table">
               <TableHead>

@@ -9,7 +9,9 @@ import {
   Paper,
   TablePagination,
 } from '@mui/material';
-import data from '../data.json'; // Assurez-vous que le chemin est correct
+import axios from 'axios';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Games() {
   const [games, setGames] = useState([]);
@@ -17,7 +19,13 @@ function Games() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setGames(data.games);
+    axios.get(`${API_URL}/games`)
+      .then((response) => {
+        setGames(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching games:', error);
+      });
   }, []);
 
   const handleChangePage = (event, newPage) => {

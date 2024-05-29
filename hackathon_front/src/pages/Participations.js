@@ -9,7 +9,9 @@ import {
   Paper,
   TablePagination,
 } from '@mui/material';
-import data from '../data.json'; // Assurez-vous que le chemin est correct
+import axios from 'axios';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Participations() {
   const [participations, setParticipations] = useState([]);
@@ -17,7 +19,13 @@ function Participations() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setParticipations(data.participations);
+    axios.get(`${API_URL}/participations`)
+      .then((response) => {
+        setParticipations(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching participations:', error);
+      });
   }, []);
 
   const handleChangePage = (event, newPage) => {
@@ -32,8 +40,8 @@ function Participations() {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}>Participations</h2>
-      <div className="table-container">
-        <div className="table-wrapper">
+      <div className="table-container" style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+        <div className="table-wrapper" style={{ width: '80%' }}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="participations table">
               <TableHead>

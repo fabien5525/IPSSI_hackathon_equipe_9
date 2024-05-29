@@ -1,14 +1,15 @@
-
 import os
 from dotenv import load_dotenv
-load_dotenv()
-
-
-print("Démarrage de l'application Flask...")
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
+from flask_cors import CORS
+
+load_dotenv()
+
+print("Démarrage de l'application Flask...")
 
 app = Flask(__name__)
+CORS(app)
 
 # Configuration de la base de données MySQL
 app.config['MYSQL_HOST'] = os.getenv("MYSQL_HOST")
@@ -28,7 +29,7 @@ def home():
 def get_countries():
     try:
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM Country')
+        cur.execute('SELECT * FROM country')
         data = cur.fetchall()
         cur.close()
 
@@ -48,7 +49,7 @@ def get_countries():
 def get_athletes():
     try:
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM Athlete')
+        cur.execute('SELECT * FROM athlete')
         data = cur.fetchall()
         cur.close()
 
@@ -64,12 +65,12 @@ def get_athletes():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-#lire la table Game
+# lire la table Game
 @app.route('/games', methods=['GET'])
 def get_games():
     try:
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM Game')
+        cur.execute('SELECT * FROM game')
         data = cur.fetchall()
         cur.close()
 
@@ -90,7 +91,7 @@ def get_games():
 def get_participations():
     try:
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM Participation')
+        cur.execute('SELECT * FROM participation')
         data = cur.fetchall()
         cur.close()
 
@@ -114,4 +115,3 @@ def get_participations():
 if __name__ == '__main__':
     print("Lancement de l'application...")
     app.run(debug=True)
-

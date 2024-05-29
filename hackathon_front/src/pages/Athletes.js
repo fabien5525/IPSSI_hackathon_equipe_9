@@ -9,7 +9,9 @@ import {
   Paper,
   TablePagination,
 } from '@mui/material';
-import data from '../data.json'; // Assurez-vous que le chemin est correct
+import axios from 'axios';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Athletes() {
   const [athletes, setAthletes] = useState([]);
@@ -17,7 +19,13 @@ function Athletes() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setAthletes(data.athletes);
+    axios.get(`${API_URL}/athletes`)
+      .then((response) => {
+        setAthletes(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching athletes:', error);
+      });
   }, []);
 
   const handleChangePage = (event, newPage) => {
@@ -32,8 +40,8 @@ function Athletes() {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}>Athlètes</h2>
-      <div className="table-container">
-        <div className="table-wrapper">
+      <div className="table-container" style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+        <div className="table-wrapper" style={{ width: '80%' }}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="athletes table">
               <TableHead>
