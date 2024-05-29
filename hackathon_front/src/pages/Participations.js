@@ -9,7 +9,7 @@ import {
   Paper,
   TablePagination,
 } from '@mui/material';
-import data from '../data.json'; // Assurez-vous que le chemin est correct
+import axios from 'axios';
 
 function Participations() {
   const [participations, setParticipations] = useState([]);
@@ -17,7 +17,13 @@ function Participations() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setParticipations(data.participations);
+    axios.get('http://localhost:3001/participations')
+      .then((response) => {
+        setParticipations(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching participations:', error);
+      });
   }, []);
 
   const handleChangePage = (event, newPage) => {

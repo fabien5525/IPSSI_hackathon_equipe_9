@@ -9,7 +9,7 @@ import {
   Paper,
   TablePagination,
 } from '@mui/material';
-import data from '../data.json'; // Assurez-vous que le chemin est correct
+import axios from 'axios';
 
 function Countries() {
   const [countries, setCountries] = useState([]);
@@ -17,7 +17,13 @@ function Countries() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setCountries(data.countries);
+    axios.get('http://localhost:3001/countries')
+      .then((response) => {
+        setCountries(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching countries:', error);
+      });
   }, []);
 
   const handleChangePage = (event, newPage) => {

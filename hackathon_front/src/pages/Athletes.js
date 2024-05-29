@@ -9,7 +9,7 @@ import {
   Paper,
   TablePagination,
 } from '@mui/material';
-import data from '../data.json'; // Assurez-vous que le chemin est correct
+import axios from 'axios';
 
 function Athletes() {
   const [athletes, setAthletes] = useState([]);
@@ -17,7 +17,13 @@ function Athletes() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setAthletes(data.athletes);
+    axios.get('http://localhost:3001/athletes')
+      .then((response) => {
+        setAthletes(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching athletes:', error);
+      });
   }, []);
 
   const handleChangePage = (event, newPage) => {
