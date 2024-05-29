@@ -38,8 +38,8 @@ function Athletes() {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}>Athlètes</h2>
-      <div className="table-container">
-        <div className="table-wrapper">
+      <div className="table-container" style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+        <div className="table-wrapper" style={{ width: '80%' }}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="athletes table">
               <TableHead>
