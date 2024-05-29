@@ -17,6 +17,7 @@ print("App Flask créée...")
 def home():
     return "Bienvenue à mon API Flask!"
 
+# Route pour lire tous les enregistrements de la table Country
 @app.route('/countries', methods=['GET'])
 def get_countries():
     try:
@@ -36,64 +37,71 @@ def get_countries():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/countries/<int:id>', methods=['GET'])
-def get_country_by_id(id):
+# Route pour lire tous les enregistrements de la table Athlete
+@app.route('/athletes', methods=['GET'])
+def get_athletes():
     try:
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM Country WHERE id = %s', (id,))
-        data = cur.fetchone()
+        cur.execute('SELECT * FROM Athlete')
+        data = cur.fetchall()
         cur.close()
 
-        if data:
-            result = {
-                'id': data[0],
-                'name': data[1]
-            }
-            return jsonify(result)
-        else:
-            return jsonify({"error": "Country not found"}), 404
+        result = []
+        for row in data:
+            result.append({
+                'id': row[0],
+                'full_name': row[1],
+                'birth': row[2]
+            })
+
+        return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/countries', methods=['POST'])
-def add_country():
+# Route pour lire tous les enregistrements de la table Game
+@app.route('/games', methods=['GET'])
+def get_games():
     try:
-        data = request.get_json()
-        name = data.get('name')
-
         cur = mysql.connection.cursor()
-        cur.execute('INSERT INTO Country (name) VALUES (%s)', (name,))
-        mysql.connection.commit()
+        cur.execute('SELECT * FROM Game')
+        data = cur.fetchall()
         cur.close()
 
-        return jsonify({"message": "Country added successfully"}), 201
+        result = []
+        for row in data:
+            result.append({
+                'id': row[0],
+                'name': row[1],
+                'year': row[2]
+            })
+
+        return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/countries/<int:id>', methods=['PUT'])
-def update_country(id):
-    try:
-        data = request.get_json()
-        name = data.get('name')
-
-        cur = mysql.connection.cursor()
-        cur.execute('UPDATE Country SET name = %s WHERE id = %s', (name, id))
-        mysql.connection.commit()
-        cur.close()
-
-        return jsonify({"message": "Country updated successfully"}), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-@app.route('/countries/<int:id>', methods=['DELETE'])
-def delete_country(id):
+# Route pour lire tous les enregistrements de la table Participation
+@app.route('/participations', methods=['GET'])
+def get_participations():
     try:
         cur = mysql.connection.cursor()
-        cur.execute('DELETE FROM Country WHERE id = %s', (id,))
-        mysql.connection.commit()
+        cur.execute('SELECT * FROM Participation')
+        data = cur.fetchall()
         cur.close()
 
-        return jsonify({"message": "Country deleted successfully"}), 200
+        result = []
+        for row in data:
+            result.append({
+                'id': row[0],
+                'game_id': row[1],
+                'athlete_id': row[2],
+                'country_id': row[3],
+                'total': row[4],
+                'gold': row[5],
+                'silver': row[6],
+                'bronze': row[7]
+            })
+
+        return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
