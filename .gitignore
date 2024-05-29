@@ -1,5 +1,8 @@
 /.venv/
 .idea
 *.xlsx
+*.json
+*.html
+*.xml
 notebooks/Hackathon.ipynb
 .DS_Store

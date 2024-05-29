@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `athlete` (
   `id` int(11) NOT NULL,
   `full_name` varchar(255) NOT NULL,
-  `birth` date NOT NULL
+  `birth` int(11) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
