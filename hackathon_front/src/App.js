@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Analysis from './pages/Analysis';
-import OlympicFacts from './pages/OlympicFacts';
 import MedalPredictions from './pages/MedalPredictions';
 import Games from './pages/Games';
 import Athletes from './pages/Athletes';
@@ -22,7 +21,6 @@ function App() {
           <Route path="/countries" element={<Countries />} />
           <Route path="/participations" element={<Participations />} />
           <Route path="/analysis" element={<Analysis />} />
-          <Route path="/olympic-facts" element={<OlympicFacts />} />
           <Route path="/olympic-medal-predictions" element={<MedalPredictions />} />
         </Routes>
       </div>

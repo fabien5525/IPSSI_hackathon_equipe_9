@@ -28,10 +28,27 @@ const useStyles = {
   navButton: {
     marginLeft: '20px',
   },
+  customButton: {
+    marginLeft: '20px',
+    borderRadius: '20px', // Ajoute des coins arrondis
+    padding: '8px 16px', // Augmente la taille des boutons
+    backgroundColor: '#2196f3', // Couleur de fond bleue
+    color: 'white', // Couleur du texte blanc
+    '&:hover': {
+      backgroundColor: '#0d8bf2', // Couleur de fond au survol
+    },
+  },
+  menuItem: {
+    borderRadius: '20px', 
+    padding: '4px 35px', 
+    '&:hover': {
+      backgroundColor: '#0d8bf2', 
+    },
+  },
 };
 
 const NavbarButton = styled(Button)(({ theme }) => ({
-  marginLeft: '20px',
+  ...useStyles.customButton,
 }));
 
 function Navbar() {
@@ -79,13 +96,40 @@ function Navbar() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} component={Link} to="/games">Jeux</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/athletes">Athlètes</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/countries">Pays</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/participations">Participations</MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/games"
+              sx={useStyles.menuItem}
+            >
+              Jeux
+            </MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/athletes"
+              sx={useStyles.menuItem}
+            >
+              Athlètes
+            </MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/countries"
+              sx={useStyles.menuItem}
+            >
+              Pays
+            </MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/participations"
+              sx={useStyles.menuItem}
+            >
+              Participations
+            </MenuItem>
           </Menu>
           <NavbarButton component={Link} to="/analysis">ANALYSES</NavbarButton>
-          <NavbarButton component={Link} to="/olympic-facts">FAITS OLYMPIQUES</NavbarButton>
           <NavbarButton component={Link} to="/olympic-medal-predictions">PRÉVISIONS DE MÉDAILLES OLYMPIQUES</NavbarButton>
         </div>
       </Toolbar>
