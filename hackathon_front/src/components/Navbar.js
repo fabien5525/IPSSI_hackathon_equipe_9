@@ -85,7 +85,6 @@ function Navbar() {
             <MenuItem onClick={handleClose} component={Link} to="/participations">Participations</MenuItem>
           </Menu>
           <NavbarButton component={Link} to="/analysis">ANALYSES</NavbarButton>
-          <NavbarButton component={Link} to="/olympic-facts">FAITS OLYMPIQUES</NavbarButton>
           <NavbarButton component={Link} to="/olympic-medal-predictions">PRÉVISIONS DE MÉDAILLES OLYMPIQUES</NavbarButton>
         </div>
       </Toolbar>
