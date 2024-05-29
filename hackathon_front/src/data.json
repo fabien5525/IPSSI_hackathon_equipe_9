@@ -1,0 +1,18 @@
+{
+  "games": [
+    { "id": 1, "name": "Summer Olympics", "year": 2016 },
+    { "id": 2, "name": "Winter Olympics", "year": 2018 }
+  ],
+  "athletes": [
+    { "id": 1, "full_name": "John Doe", "birth": "1990-05-15" },
+    { "id": 2, "full_name": "Jane Smith", "birth": "1988-08-22" }
+  ],
+  "countries": [
+    { "id": 1, "name": "USA" },
+    { "id": 2, "name": "Canada" }
+  ],
+  "participations": [
+    { "id": 1, "game_id": 1, "athlete_id": 1, "country_id": 1, "total": 3, "gold": 1, "silver": 1, "bronze": 1 },
+    { "id": 2, "game_id": 2, "athlete_id": 2, "country_id": 2, "total": 2, "gold": 0, "silver": 1, "bronze": 1 }
+  ]
+}

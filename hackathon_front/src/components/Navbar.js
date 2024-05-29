@@ -60,7 +60,6 @@ function Navbar() {
           </Typography>
         </div>
         <div style={useStyles.navLinks}>
-          <NavbarButton component={Link} to="/data">DONNÉES</NavbarButton>
           <NavbarButton onClick={handleMenu}>
             VISUALISATIONS
             <ArrowDropDownIcon />
@@ -80,11 +79,10 @@ function Navbar() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} component={Link} to="/medals-timeline">Chronologie des Médailles</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/gender-body-composition">Sexe et Composition Corporelle</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/medals-vs-gdp">Médailles VS PIB</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/medals-world-view-seasons">Vue Mondiale des Médailles - Saisons</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/medals-world-view-sport">Vue Mondiale des Médailles - Sport</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/games">Jeux</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/athletes">Athlètes</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/countries">Pays</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/participations">Participations</MenuItem>
           </Menu>
           <NavbarButton component={Link} to="/analysis">ANALYSES</NavbarButton>
           <NavbarButton component={Link} to="/olympic-facts">FAITS OLYMPIQUES</NavbarButton>
