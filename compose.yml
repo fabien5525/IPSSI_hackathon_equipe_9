@@ -1,0 +1,45 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Vous pouvez changer le mot de passe ici
+      MYSQL_DATABASE: mydatabase         # Nom de la base de données à créer automatiquement
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "25566:80"  # Redirige le port 25566 de l'hôte vers le port 80 du conteneur
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword  # Utilisez le même mot de passe que MYSQL_ROOT_PASSWORD
+    depends_on:
+      - db
+
+  # front nodejs 20, with react (npm start)
+  front:
+    build: ./docker/front
+    working_dir: /app
+    volumes:
+      - ./hackathon_front:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+
+  # back python 3.9, with flash (python app.py) 
+  back:
+    build: ./docker/back
+    working_dir: /app
+    volumes:
+      - ./back:/app
+      - /app/__pycache__
+    # ports:
+    #   - "5000:5000"
+
+
+volumes:
+  db_data:

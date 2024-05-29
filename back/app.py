@@ -1,3 +1,4 @@
+
 print("Démarrage de l'application Flask...")
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
@@ -100,3 +101,4 @@ def delete_country(id):
 if __name__ == '__main__':
     print("Lancement de l'application...")
     app.run(debug=True)
+

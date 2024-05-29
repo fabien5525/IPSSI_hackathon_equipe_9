@@ -6,7 +6,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import logo from '../assets/OlympicsAI.png';
 
 const useStyles = {
@@ -59,15 +60,16 @@ function Navbar() {
           </Typography>
         </div>
         <div style={useStyles.navLinks}>
-          <NavbarButton href="#data">DATA</NavbarButton>
+          <NavbarButton component={Link} to="/data">DONNÉES</NavbarButton>
           <NavbarButton onClick={handleMenu}>
-            VISUALIZATIONS
+            VISUALISATIONS
+            <ArrowDropDownIcon />
           </NavbarButton>
           <Menu
             id="menu-appbar"
             anchorEl={anchorEl}
             anchorOrigin={{
-              vertical: 'top',
+              vertical: 'bottom',
               horizontal: 'right',
             }}
             keepMounted
@@ -78,15 +80,15 @@ function Navbar() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} component="a" href="#medals-timeline">Medals Timeline</MenuItem>
-            <MenuItem onClick={handleClose} component="a" href="#gender-body-composition">Gender & Body Composition</MenuItem>
-            <MenuItem onClick={handleClose} component="a" href="#medals-vs-gdp">Medals VS GDP</MenuItem>
-            <MenuItem onClick={handleClose} component="a" href="#medals-world-view-seasons">Medals World View - Seasons</MenuItem>
-            <MenuItem onClick={handleClose} component="a" href="#medals-world-view-sport">Medals World View - Sport</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/medals-timeline">Chronologie des Médailles</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/gender-body-composition">Sexe et Composition Corporelle</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/medals-vs-gdp">Médailles VS PIB</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/medals-world-view-seasons">Vue Mondiale des Médailles - Saisons</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/medals-world-view-sport">Vue Mondiale des Médailles - Sport</MenuItem>
           </Menu>
-          <NavbarButton href="#analysis">ANALYSIS</NavbarButton>
-          <NavbarButton href="#olympic-facts">OLYMPIC FACTS</NavbarButton>
-          <NavbarButton href="#olympic-medal-predictions">OLYMPIC MEDAL PREDICTIONS</NavbarButton>
+          <NavbarButton component={Link} to="/analysis">ANALYSES</NavbarButton>
+          <NavbarButton component={Link} to="/olympic-facts">FAITS OLYMPIQUES</NavbarButton>
+          <NavbarButton component={Link} to="/olympic-medal-predictions">PRÉVISIONS DE MÉDAILLES OLYMPIQUES</NavbarButton>
         </div>
       </Toolbar>
     </AppBar>
