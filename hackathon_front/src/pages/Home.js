@@ -27,7 +27,7 @@ function Home() {
           OBJECTIFS DU PROJET
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Analyser et créer des visualisations sur un ensemble de données olympiques de 1896 à 2016 pour découvrir quels pays restent en tête au fil du temps, par saison et par sport ; ce qu'il faut pour qu'un Olympien soit au sommet dans chaque sport, la popularité des sports et la relation entre le nombre de médailles olympiques et le PIB du pays.
+          Analyser et créer des visualisations sur un ensemble de données olympiques de 1896 à 2022 pour découvrir quels pays restent en tête au fil du temps, par saison et par sport ; ce qu'il faut pour qu'un Olympien soit au sommet dans chaque sport, la popularité des sports et la relation entre le nombre de médailles olympiques et le PIB du pays.
         </Typography>
         <Typography variant="body1" gutterBottom>
           En outre, à partir de l'ensemble de données olympiques, l'apprentissage automatique a été intégré pour prédire le nombre de médailles que 25 pays obtiendraient aux Jeux olympiques de Tokyo 2020 avec la régression linéaire, la régression logistique et le modèle ARIMA (Auto Regressive Integrated Moving Average).

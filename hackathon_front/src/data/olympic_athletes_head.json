@@ -1,0 +1,137 @@
+[
+    {
+        "athlete_url": "https://olympics.com/en/athletes/cooper-woods-topalovic",
+        "athlete_full_name": "Cooper WOODS-TOPALOVIC",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 2000.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/elofsson",
+        "athlete_full_name": "Felix ELOFSSON",
+        "games_participations": 2,
+        "first_game": "PyeongChang 2018",
+        "athlete_year_birth": 1995.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/dylan-walczyk",
+        "athlete_full_name": "Dylan WALCZYK",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 1993.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/olli-penttala",
+        "athlete_full_name": "Olli PENTTALA",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 1995.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/reikherd",
+        "athlete_full_name": "Dmitriy REIKHERD",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 1989.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/matt-graham",
+        "athlete_full_name": "Matt GRAHAM",
+        "games_participations": 3,
+        "first_game": "Sochi 2014",
+        "athlete_year_birth": 1994.0,
+        "athlete_medals": "\n\n\n1\n\nS\n\n",
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/ikuma-horishima",
+        "athlete_full_name": "Ikuma HORISHIMA",
+        "games_participations": 2,
+        "first_game": "PyeongChang 2018",
+        "athlete_year_birth": 1997.0,
+        "athlete_medals": "\n\n\n1\n\nB\n\n",
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/daichi-hara",
+        "athlete_full_name": "Daichi HARA",
+        "games_participations": 2,
+        "first_game": "PyeongChang 2018",
+        "athlete_year_birth": 1997.0,
+        "athlete_medals": "\n\n\n1\n\nB\n\n",
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/laurent-dumais",
+        "athlete_full_name": "Laurent DUMAIS",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 1996.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/james-matheson",
+        "athlete_full_name": "James MATHESON",
+        "games_participations": 2,
+        "first_game": "PyeongChang 2018",
+        "athlete_year_birth": 1995.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/pavel-kolmakov",
+        "athlete_full_name": "Pavel KOLMAKOV",
+        "games_participations": 3,
+        "first_game": "Sochi 2014",
+        "athlete_year_birth": 1996.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/kosuke-sugimoto",
+        "athlete_full_name": "Kosuke SUGIMOTO",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 1994.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/brodie-summers",
+        "athlete_full_name": "Brodie SUMMERS",
+        "games_participations": 3,
+        "first_game": "Sochi 2014",
+        "athlete_year_birth": 1993.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/severi-vierela",
+        "athlete_full_name": "Severi VIERELA",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 2001.0,
+        "athlete_medals": null,
+        "bio": null
+    },
+    {
+        "athlete_url": "https://olympics.com/en/athletes/marco-tade",
+        "athlete_full_name": "Marco TADE",
+        "games_participations": 1,
+        "first_game": "Beijing 2022",
+        "athlete_year_birth": 1995.0,
+        "athlete_medals": null,
+        "bio": null
+    }
+]
