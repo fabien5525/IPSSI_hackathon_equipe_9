@@ -37,8 +37,8 @@ services:
     volumes:
       - ./back:/app
       - /app/__pycache__
-    # ports:
-    #   - "5000:5000"
+    ports:
+      - "3001:5000"
 
 
 volumes:
