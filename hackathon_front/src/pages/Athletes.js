@@ -11,13 +11,15 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Athletes() {
   const [athletes, setAthletes] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/athletes')
+    axios.get(`${API_URL}/athletes`)
       .then((response) => {
         setAthletes(response.data);
       })

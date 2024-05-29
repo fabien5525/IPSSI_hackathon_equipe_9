@@ -11,13 +11,15 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Countries() {
   const [countries, setCountries] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/countries')
+    axios.get(`${API_URL}/countries`)
       .then((response) => {
         setCountries(response.data);
       })
