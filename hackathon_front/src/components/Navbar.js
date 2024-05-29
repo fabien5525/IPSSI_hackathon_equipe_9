@@ -30,20 +30,9 @@ const useStyles = {
   },
   customButton: {
     marginLeft: '20px',
-    borderRadius: '20px', // Ajoute des coins arrondis
-    padding: '8px 16px', // Augmente la taille des boutons
-    backgroundColor: '#2196f3', // Couleur de fond bleue
-    color: 'white', // Couleur du texte blanc
-    '&:hover': {
-      backgroundColor: '#0d8bf2', // Couleur de fond au survol
-    },
   },
   menuItem: {
-    borderRadius: '20px', 
     padding: '4px 35px', 
-    '&:hover': {
-      backgroundColor: '#0d8bf2', 
-    },
   },
 };
 
