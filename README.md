@@ -3,7 +3,7 @@
 ## Membre
 * Fabien Colard
 * Mamoudou NDONGO
-* Jemimadoria KOUMBA
+* Jemima-doria KOUMBA
 * Omar MUFTI
 * Loris HASLAY
 * Chaymae Houbbadi
