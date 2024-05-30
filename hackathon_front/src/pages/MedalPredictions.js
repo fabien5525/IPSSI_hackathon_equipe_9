@@ -13,16 +13,16 @@ import {
 
 function MedalPredictions() {
   const [medalPredictions] = useState([
-    { Country: 'USA', Predicted_Medals: 1794.345947 },
-    { Country: 'Germany', Predicted_Medals: 1482.828735 },
-    { Country: 'Russia', Predicted_Medals: 1371.086792 },
-    { Country: 'Italy', Predicted_Medals: 547.946533 },
-    { Country: 'Norway', Predicted_Medals: 495.993683 },
-    { Country: 'France', Predicted_Medals: 421.980316 },
-    { Country: 'China', Predicted_Medals: 416.937347 },
-    { Country: 'Hungary', Predicted_Medals: 413.881622 },
-    { Country: 'Finland', Predicted_Medals: 385.904236 },
-    { Country: 'Sweden', Predicted_Medals: 375.028229 },
+    { Country: 'USA', Predicted_Medals: 1794 },
+    { Country: 'Germany', Predicted_Medals: 1483 },
+    { Country: 'Russia', Predicted_Medals: 1371 },
+    { Country: 'Italy', Predicted_Medals: 548 },
+    { Country: 'Norway', Predicted_Medals: 496 },
+    { Country: 'France', Predicted_Medals: 422 },
+    { Country: 'China', Predicted_Medals: 417 },
+    { Country: 'Hungary', Predicted_Medals: 414 },
+    { Country: 'Finland', Predicted_Medals: 386 },
+    { Country: 'Sweden', Predicted_Medals: 375 },
   ]);
 
   const [page, setPage] = useState(0);
