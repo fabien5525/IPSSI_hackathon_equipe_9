@@ -52,7 +52,7 @@ function MedalPredictions() {
               <TableHead>
                 <TableRow>
                   <TableCell>Pays</TableCell>
-                  <TableCell>Prévisions de Médailles</TableCell>
+                  <TableCell>Nombre de médailles sur toute les années</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

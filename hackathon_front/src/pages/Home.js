@@ -1,15 +1,15 @@
 import React from 'react';
 import { Container, Box, Typography, Grid, Avatar } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import logo from '../assets/olympic.svg';  // Assurez-vous que le logo est dans ce chemin
+import logo from '../assets/olympic.svg';
 
 const teamMembers = [
-  { name: 'Fabien COLARD', image: 'path/to.png', role: 'Chef de projet' },
-  { name: 'Chaymae HOUBBADI', image: 'path/to.png', role: 'Data analyst' },
-  { name: 'Jemima-doria KOUMBA', image: 'path/to.png', role: 'Développeur web & Data analyst' },
-  { name: 'Omar MUFTI', image: 'path/to.png', role: 'Développeur web' },
-  { name: 'Mamoudou NDONGO', image: 'path/to.png', role: 'Data analyst' },
-  { name: 'Loris HASLAY', image: 'path/to.png', role: '' },
+  { name: 'Fabien COLARD', image: '/images/tabletennis.png', role: 'Chef de projet' },
+  { name: 'Chaymae HOUBBADI', image: '/images/athletism.png', role: 'Data analyst' },
+  { name: 'Jemima-doria KOUMBA', image: '/images/gymnastic.png', role: 'Développeur web & Data analyst' },
+  { name: 'Omar MUFTI', image: '/images/weightlifting.png', role: 'Développeur web' },
+  { name: 'Mamoudou NDONGO', image: '/images/judo.png', role: 'Data analyst' },
+  { name: 'Loris HASLAY', image: '/images/swimming.png', role: '' },
 ];
 
 function Home() {
@@ -27,7 +27,7 @@ function Home() {
           Objectif du projet
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Analyser et créer des visualisations sur un ensemble de données olympiques de 1896 à 2022 pour découvrir quels pays restent en tête au fil du temps, par saison et par sport ; ce qu'il faut pour qu'un Olympien soit au sommet dans chaque sport, la popularité des sports et la relation entre le nombre de médailles olympiques et le PIB du pays.
+          Analyser et créer des visualisations sur un ensemble de données olympiques de 1896 à 2022 pour découvrir quels pays restent en tête au fil du temps, par saison et par sport ; ce qu'il faut pour qu'un Olympien soit au sommet dans chaque sport, la popularité des sports et la relation entre le nombre de médailles olympiques.
         </Typography>
       </Box>
 
