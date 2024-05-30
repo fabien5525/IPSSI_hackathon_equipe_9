@@ -1,36 +1,38 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Typography} from "@mui/material";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Analysis() {
   const cards = [
     {
       description: 'Les disciplines les plus populaires.',
-      source: 'http://localhost:3001/images/top_10_disc.png',
+      source: `${API_URL}/images/top_10_disc.png`,
       title: 'Top 10 disciplines'
     },
     {
       description: 'Les disciplines les plus populaires avec médailles.',
-      source: 'http://localhost:3001/images/top_10_disc_medal.png',
+      source: `${API_URL}/images/top_10_disc_medal.png`,
       title: 'Top 10 disciplines par avec médailles'
     },
     {
       description: 'Les médailles gagnée par pays.',
-      source: 'http://localhost:3001/images/repart_medal_par_pays.png',
+      source: `${API_URL}/images/repart_medal_par_pays.png`,
       title: 'Répartition des médailles par pays'
     },
     {
       description: 'La répartition des saison.',
-      source: 'http://localhost:3001/images/saison.png',
+      source: `${API_URL}/images/saison.png`,
       title: 'Répartition des saison'
     },
     {
       description: 'Les pays avec le plus de médailles.',
-      source: 'http://localhost:3001/images/top_10_country_medal.png',
+      source: `${API_URL}/images/top_10_country_medal.png`,
       title: 'Top 10 pays avec médailles'
     },
     {
       description: 'Les mots les plus utilisés pour décrire les événements.',
-      source: 'http://localhost:3001/images/wordcloud_type_event.png',
+      source: `${API_URL}/images/wordcloud_type_event.png`,
       title: 'Types d\'événements les plus populaires'
     },
   ];
