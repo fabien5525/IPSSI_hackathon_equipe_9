@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, send_from_directory
 from flask_mysqldb import MySQL
 from flask_cors import CORS
 
@@ -23,6 +23,11 @@ print("App Flask créée...")
 @app.route('/')
 def home():
     return "Bienvenue à mon API Flask!"
+
+# static /images folder
+@app.route('/images/<path:filename>')
+def send_images(filename):
+    return send_from_directory('images', filename)
 
 # lire la table Country
 @app.route('/countries', methods=['GET'])

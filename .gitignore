@@ -6,3 +6,5 @@
 *.xml
 notebooks/Hackathon.ipynb
 .DS_Store
+mydatabase.sql
+*.override.yml
