@@ -8,15 +8,15 @@
 * Loris HASLAY
 * Chaymae Houbbadi
 
-## Instalation du projet
+## Installation du projet
 
 Ce projet utilise docker principalement.
 
 Nous avons 4 services principaux : 
 * db : Une base de données mariadb qui héberge nos données
-* phpmyadmin : Un site disponible sur le port 25566 qui permet de visualisé la base de données
-* front : Une image basé sur node permettant gérér l'hébergement de l'applicaton ReactJS
-* back : Une image basé sur python permettant de gérér l'hébergement de l'application Flask (API)
+* phpmyadmin : Un site disponible qui permet de visualiser la base de données
+* front : Une image basée sur node permettant gérer l'hébergement de l'application ReactJS
+* back : Une image basée sur python permettant de gérer l'hébergement de l'application Flask (API)
 
 Pour lancer le docker
 
@@ -24,7 +24,7 @@ Pour lancer le docker
 docker compose up -d
 ```
 
-On peux ensuite accéder aux différentes ressources avec les sites suivants : 
+On peut ensuite accéder aux différentes ressources avec les sites suivants : 
 * Front : http://localhost:3000
 * Back : http://localhost:3001
 * phpMyAdmin : http://localhost:25566
@@ -33,11 +33,13 @@ Si on souhaite ajouter un dump de la base, il suffit de remplacer le fichier hac
 
 ## Arborescence
 
-* back : Contenant l'API Flask
-* hackathon_front : Contenant l'application ReactJS
-* notebook
-  * data : un dossier contenant les quatres datasets d'origine 
-    * (dossier à créer lors de l'installation du projet pour utiliser les notebooks)
-  * notebook.ipynb : Utilisé pour l'exploration & le traitement des données
-  * bd.ipynb : Utilisé pour le remplissage de la base de données 
-  * spark : Contenant l'image docker et le traitement utilisé avec spark
+* back : *Contenant l'API Flask*
+* hackathon_front : *Contenant l'application ReactJS*
+* notebooks : *Contenant les notebooks utilisés durant le projet*
+  * data : *un dossier contenant les 4 datasets d'origine* 
+    * *(dossier à créer lors de l'installation du projet pour utiliser les notebooks)*
+  * notebook.ipynb : *Utilisé pour l'exploration & le traitement des données*
+  * bd.ipynb : *Utilisé pour le remplissage de la base de données* 
+  * spark : *Contenant l'image docker et le traitement utilisé avec spark*
+  * G.ColabModel.ipynb : *Utilisé pour l'entrainement du modèle avec tensorflow sur Google Colab*
+  * tensorflow : *Contenant l'image docker et le traitement utilisé avec tensorflow*
