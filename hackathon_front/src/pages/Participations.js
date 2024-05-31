@@ -62,9 +62,9 @@ function Participations() {
                   .map((participation) => (
                     <TableRow key={participation.id}>
                       <TableCell>{participation.id}</TableCell>
-                      <TableCell>{participation.game_id}</TableCell>
-                      <TableCell>{participation.athlete_id}</TableCell>
-                      <TableCell>{participation.country_id}</TableCell>
+                      <TableCell>{participation.game_name}</TableCell>
+                      <TableCell>{participation.athlete_name}</TableCell>
+                      <TableCell>{participation.country_name}</TableCell>
                       <TableCell align="right">{participation.total}</TableCell>
                       <TableCell align="right">{participation.gold}</TableCell>
                       <TableCell align="right">{participation.silver}</TableCell>

@@ -91,12 +91,22 @@ def get_games():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 # lire la table Participation
 @app.route('/participations', methods=['GET'])
 def get_participations():
     try:
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM participation')
+        query = """
+            SELECT p.id, g.name AS game_name, a.full_name AS athlete_name, c.name AS country_name, 
+                   p.total, p.gold, p.silver, p.bronze
+                    FROM participation p
+                    JOIN game g ON p.game_id = g.id
+                    JOIN athlete a ON p.athlete_id = a.id
+                    JOIN country c ON p.country_id = c.id
+                    GROUP by p.id;
+        """
+        cur.execute(query)
         data = cur.fetchall()
         cur.close()
 
@@ -104,9 +114,9 @@ def get_participations():
         for row in data:
             result.append({
                 'id': row[0],
-                'game_id': row[1],
-                'athlete_id': row[2],
-                'country_id': row[3],
+                'game_name': row[1],
+                'athlete_name': row[2],
+                'country_name': row[3],
                 'total': row[4],
                 'gold': row[5],
                 'silver': row[6],
