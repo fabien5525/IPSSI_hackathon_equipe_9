@@ -8,25 +8,25 @@ import {
   TableRow,
   Paper,
   TablePagination,
-  Typography
+  Typography, CardContent, Card, CardMedia
 } from '@mui/material';
 
 function MedalPredictions() {
   const [medalPredictions] = useState([
-    { Country: 'USA', Predicted_Medals: 1794 },
-    { Country: 'Germany', Predicted_Medals: 1483 },
-    { Country: 'Russia', Predicted_Medals: 1371 },
-    { Country: 'Italy', Predicted_Medals: 548 },
-    { Country: 'Norway', Predicted_Medals: 496 },
-    { Country: 'France', Predicted_Medals: 422 },
-    { Country: 'China', Predicted_Medals: 417 },
-    { Country: 'Hungary', Predicted_Medals: 414 },
-    { Country: 'Finland', Predicted_Medals: 386 },
-    { Country: 'Sweden', Predicted_Medals: 375 },
+    { name: 'USA', source: '/images/USA.png' },
+    { name: 'Germany', source: '/images/Germany.png' },
+    { name: 'Russia', source: '/images/Russia.png' },
+    { name: 'Italy', source: '/images/Italy.png' },
+    { name: 'Norway', source: '/images/Norway.png' },
+    { name: 'France', source: '/images/France.png' },
+    { name: 'China', source: '/images/Chine.png' },
+    { name: 'Hungary', source: '/images/Hungary.png' },
+    { name: 'Finland', source: '/images/Finland.png' },
+    { name: 'Sweden', source: '/images/Sweden.png' },
   ]);
 
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -44,38 +44,36 @@ function MedalPredictions() {
         <div className="table-wrapper" style={{ width: '80%' }}>
           <Paper sx={{ padding: 2, marginBottom: '8px' }}>
             <Typography variant="p" gutterBottom>
-              En utilisant un modèle de réseau de neuronne (4 couches) avec Tensorflow et Keras, nous avons prédits les résultats suivants pour les médailles olympiques.
+              En utilisant un modèle de réseau de neuronne (4 couches) avec Tensorflow et Keras, nous avons prédits les résultats suivants pour le top des pays.
             </Typography>
           </Paper>
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="medal predictions table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Pays</TableCell>
-                  <TableCell>Nombre de médailles sur toute les années</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {medalPredictions
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((prediction, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{prediction.Country}</TableCell>
-                      <TableCell>{prediction.Predicted_Medals}</TableCell>
-                    </TableRow>
-                  ))}
-              </TableBody>
-            </Table>
-            <TablePagination
-              rowsPerPageOptions={[5, 10, 25]}
-              component="div"
-              count={medalPredictions.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          </TableContainer>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            // align center
+            alignItems: 'center'
+
+          }}>
+            {medalPredictions.map((country, index) =>
+              <Card sx={{ width: 345, marginBottom: '8px' }} key={`country-${index}`}>
+                <CardMedia
+                  sx={{ width: 345, height: 195 }}
+                  image={country.source}
+                  title={country.name}
+                />
+                <CardContent>
+                  {/* Typo country at begining of the row and place at the end */}
+                  <Typography gutterBottom variant="h5" component="div">
+                    {country.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {index + 1} place
+                  </Typography>
+                </CardContent>
+              </Card>
+            )}
+          </div>
         </div>
       </div>
     </div>
