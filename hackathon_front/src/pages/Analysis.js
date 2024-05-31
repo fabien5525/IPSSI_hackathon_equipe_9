@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardContent, CardMedia, Typography} from "@mui/material";
+import {Card, CardContent, CardMedia, Typography, Grid} from "@mui/material";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -40,34 +40,40 @@ function Analysis() {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}>Analyses</h2>
-      <div className="table-container" style={{ display: 'flex',
-        justifyContent: 'center',
-        margin: '20px 0',
-        flexDirection: 'column',
-        alignItems: 'center',
+      <div className="table-container" style={{
+        margin: '8px'
       }}>
-        {cards.map((card) =>
-          <Card sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            maxWidth: 840,
-            marginBottom: 4
-          }}>
-            <CardContent>
-              <Typography variant="body2" color="text.secondary">
-                {card.description}
-              </Typography>
-            </CardContent>
-            <CardMedia
-              sx={{ maxWidth: 800, padding: 2 }}
-              component={'img'}
-              image={card.source}
-              title={card.title}
-            />
-          </Card>
-        )}
+        <Grid container spacing={2}>
+          {cards.map((card, index) =>
+            <Grid key={`card-graph-${index}`} item sm={12} lg={6} style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <Card sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                maxWidth: 840,
+                marginBottom: 4
+              }}>
+                <CardContent>
+                  <Typography variant="body2" color="text.secondary">
+                    {card.description}
+                  </Typography>
+                </CardContent>
+                <CardMedia
+                  sx={{ maxWidth: 800, padding: 2 }}
+                  component={'img'}
+                  image={card.source}
+                  title={card.title}
+                />
+              </Card>
+            </Grid>
+          )}
+        </Grid>
       </div>
     </div>
   );

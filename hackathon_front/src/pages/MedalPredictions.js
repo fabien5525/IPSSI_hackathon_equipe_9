@@ -42,11 +42,13 @@ function MedalPredictions() {
       <h1 style={{ textAlign: 'center' }}>PRÉVISIONS DE MÉDAILLES OLYMPIQUES</h1>
       <div className="table-container" style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
         <div className="table-wrapper" style={{ width: '80%' }}>
-          <Typography variant="subtitle1" gutterBottom sx={{
-            marginBottom: 2,
+          <div style={{
+            marginBottom: '8px',
           }}>
-            En utilisant un modèle de réseau de neuronne (4 couches) avec Tensorflow et Keras, nous avons prédits les résultats suivants pour les médailles olympiques.
-          </Typography>
+            <Typography variant="p" gutterBottom>
+              En utilisant un modèle de réseau de neuronne (4 couches) avec Tensorflow et Keras, nous avons prédits les résultats suivants pour les médailles olympiques.
+            </Typography>
+          </div>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="medal predictions table">
               <TableHead>

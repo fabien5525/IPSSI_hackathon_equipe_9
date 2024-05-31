@@ -57,72 +57,78 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" color="default">
-      <Toolbar>
-        <div style={useStyles.title} onClick={handleLogoClick}>
-          <img src={logo} alt="Olympics Logo" style={useStyles.logo} />
-          <Typography variant="h6" color="inherit">
-            OLYMPICS.AI
-          </Typography>
-        </div>
-        <div style={useStyles.navLinks}>
-          <NavbarButton onClick={handleMenu}>
-            VISUALISATIONS
-            <ArrowDropDownIcon />
-          </NavbarButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem
-              onClick={handleClose}
-              component={Link}
-              to="/games"
-              sx={useStyles.menuItem}
+    <div style={{
+      marginTop: '8px',
+      marginLeft: '8px',
+      marginRight: '8px',
+    }}>
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <div style={useStyles.title} onClick={handleLogoClick}>
+            <img src={logo} alt="Olympics Logo" style={useStyles.logo} />
+            <Typography variant="h6" color="inherit">
+              OLYMPICS.AI
+            </Typography>
+          </div>
+          <div style={useStyles.navLinks}>
+            <NavbarButton onClick={handleMenu}>
+              VISUALISATIONS
+              <ArrowDropDownIcon />
+            </NavbarButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
             >
-              Jeux
-            </MenuItem>
-            <MenuItem
-              onClick={handleClose}
-              component={Link}
-              to="/athletes"
-              sx={useStyles.menuItem}
-            >
-              Athlètes
-            </MenuItem>
-            <MenuItem
-              onClick={handleClose}
-              component={Link}
-              to="/countries"
-              sx={useStyles.menuItem}
-            >
-              Pays
-            </MenuItem>
-            <MenuItem
-              onClick={handleClose}
-              component={Link}
-              to="/participations"
-              sx={useStyles.menuItem}
-            >
-              Participations
-            </MenuItem>
-          </Menu>
-          <NavbarButton component={Link} to="/analysis">ANALYSES</NavbarButton>
-          <NavbarButton component={Link} to="/olympic-medal-predictions">PRÉVISIONS DE MÉDAILLES OLYMPIQUES</NavbarButton>
-        </div>
-      </Toolbar>
-    </AppBar>
+              <MenuItem
+                onClick={handleClose}
+                component={Link}
+                to="/games"
+                sx={useStyles.menuItem}
+              >
+                Jeux
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                component={Link}
+                to="/athletes"
+                sx={useStyles.menuItem}
+              >
+                Athlètes
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                component={Link}
+                to="/countries"
+                sx={useStyles.menuItem}
+              >
+                Pays
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                component={Link}
+                to="/participations"
+                sx={useStyles.menuItem}
+              >
+                Participations
+              </MenuItem>
+            </Menu>
+            <NavbarButton component={Link} to="/analysis">ANALYSES</NavbarButton>
+            <NavbarButton component={Link} to="/olympic-medal-predictions">PRÉVISIONS DE MÉDAILLES OLYMPIQUES</NavbarButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }
 
