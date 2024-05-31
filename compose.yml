@@ -15,17 +15,18 @@ services:
       retries: 5
     # ports:
     #   - "3306:3306"
+    restart: always # Pour la prod
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - "25566:80"  # Redirige le port 25566 de l'hôte vers le port 80 du conteneur
-    environment:
-      PMA_HOST: db
-      PMA_USER: root
-      PMA_PASSWORD: rootpassword  # Utilisez le même mot de passe que MYSQL_ROOT_PASSWORD
-    depends_on:
-      - db
+#  phpmyadmin: # Commenté pour ne pas laisser accès root à n'importe qui en prod
+#    image: phpmyadmin/phpmyadmin
+#    ports:
+#      - "25566:80"  # Redirige le port 25566 de l'hôte vers le port 80 du conteneur
+#    environment:
+#      PMA_HOST: db
+#      PMA_USER: root
+#      PMA_PASSWORD: rootpassword  # Utilisez le même mot de passe que MYSQL_ROOT_PASSWORD
+#    depends_on:
+#      - db
 
   # front nodejs 20, with react (npm start)
   front:
@@ -36,6 +37,8 @@ services:
       - /app/node_modules
     ports:
       - "3000:3000"
+    restart: always # Pour la prod
+
 
   # back python 3.9, with flash (python app.py) 
   back:
@@ -46,6 +49,7 @@ services:
       - /app/__pycache__
     ports:
       - "3001:5000"
+    restart: always # Pour la prod
 
 
 volumes:

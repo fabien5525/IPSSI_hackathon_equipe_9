@@ -8,6 +8,19 @@
 * Loris HASLAY
 * Chaymae Houbbadi
 
+## Production
+
+(Le site ne sera pas hébergé indéfiniment)
+Si vous souhaitez le voir en production et qu'il est éteint (ou erreur 502)
+Merci de contacter fabien5525 sur discord ou f.colard@ecole-ipssi.net
+
+https://hackathon.5525.fr/
+https://back.hackathon.5525.fr/
+
+## Ressources
+
+Trello : https://trello.com/invite/ipssihackatone9/ATTIdaf8b0a8e4a1158c5ed320d8b57359a5CD1127F7
+
 ## Installation du projet
 
 Ce projet utilise docker principalement.
@@ -27,7 +40,7 @@ docker compose up -d
 On peut ensuite accéder aux différentes ressources avec les sites suivants : 
 * Front : http://localhost:3000
 * Back : http://localhost:3001
-* phpMyAdmin : http://localhost:25566
+* phpMyAdmin : http://localhost:25566 (à décommenter dans le compose.yml)
 
 Si on souhaite ajouter un dump de la base, il suffit de remplacer le fichier hackathon.sql présent dans le dossier docker/db.
 
